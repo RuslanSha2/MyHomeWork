@@ -1,14 +1,14 @@
 package ru.ctqa.mantis.my_tests;
 
-import org.junit.jupiter.api.BeforeEach;
 import ru.ctqa.mantis.my_manager.ApplicationManager;
+import org.junit.jupiter.api.BeforeEach;
 
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 
 public class TestBase {
-    protected static ApplicationManager my_app;
+    public static ApplicationManager my_app;
 
     @BeforeEach
     public void setUp() throws IOException {

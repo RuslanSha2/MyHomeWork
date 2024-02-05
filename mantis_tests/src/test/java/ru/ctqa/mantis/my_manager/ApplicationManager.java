@@ -11,6 +11,10 @@ public class ApplicationManager {
     private WebDriver my_driver;
     private String my_browser;
     private Properties my_properties;
+    private SessionHelper my_sessionHelper;
+    private HttpSessionHelper my_httpSessionHelper;
+    private JamesCliHelper my_jamesCliHelper;
+    private MailHelper my_mailHelper;
 
     public void init(String browser, Properties properties) {
         this.my_browser = browser;
@@ -31,5 +35,37 @@ public class ApplicationManager {
             my_driver.manage().window().setSize(new Dimension(1050, 790));
         }
         return my_driver;
+    }
+
+    public SessionHelper session() {
+        if (my_sessionHelper == null) {
+            my_sessionHelper = new SessionHelper(this);
+        }
+        return my_sessionHelper;
+    }
+
+    public HttpSessionHelper http() {
+        if (my_httpSessionHelper == null) {
+            my_httpSessionHelper = new HttpSessionHelper(this);
+        }
+        return my_httpSessionHelper;
+    }
+
+    public JamesCliHelper jamesCli() {
+        if (my_jamesCliHelper == null) {
+            my_jamesCliHelper = new JamesCliHelper(this);
+        }
+        return my_jamesCliHelper;
+    }
+
+    public MailHelper mail() {
+        if (my_mailHelper == null) {
+            my_mailHelper = new MailHelper(this);
+        }
+        return my_mailHelper;
+    }
+
+    public String property(String name) {
+        return my_properties.getProperty(name);
     }
 }
