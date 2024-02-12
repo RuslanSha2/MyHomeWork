@@ -1,9 +1,10 @@
 package ru.ctqa.mantis.my_tests;
 
-import ru.ctqa.mantis.my_common.MyCommonFunctions;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.MethodSource;
+import ru.ctqa.mantis.my_common.MyCommonFunctions;
+import ru.ctqa.mantis.my_model.UserData;
 
 import java.time.Duration;
 import java.util.function.Supplier;
@@ -19,15 +20,17 @@ public class UserTests extends TestBase {
     @ParameterizedTest
     @MethodSource("randomUsers")
     void canRegisterUser(String my_username) throws InterruptedException {
-        // создать пользователя (адрес) на почтовом сервисе (JamesHelper)
+        // создать пользователя (адрес) на почтовом сервисе (JamesApiHelper)
         var my_email = String.format("%s@localhost", my_username);
-        var my_password = "root";
-        my_app.jamesCli().addUser(my_email, my_password);
+        var my_password = "password";
+        my_app.jamesApi().addUser(my_email, my_password);
 
-        // заполняем форму создания и отправляем (SessionHelper)
-        my_app.session().login("administrator", "root");
-        my_app.session().createUser(my_username, my_email);
-        Assertions.assertTrue(my_app.session().existUser(my_username, my_email));
+        // заполняем форму создания и отправляем (RestApiHelper)
+        my_app.rest().createUser(new UserData()
+                .withUsername(my_username)
+                .withRealname(my_username)
+                .withPassword(my_password)
+                .withEmail(my_email));
 
         // ждём почту (MailHelper)
         var my_duration = Duration.ofSeconds(60);
