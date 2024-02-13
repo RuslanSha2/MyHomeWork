@@ -19,7 +19,7 @@ public class UserTests extends TestBase {
 
     @ParameterizedTest
     @MethodSource("randomUsers")
-    void canRegisterUser(String my_username) throws InterruptedException {
+    void canRegisterUser(String my_username) {
         // создать пользователя (адрес) на почтовом сервисе (JamesApiHelper)
         var my_email = String.format("%s@localhost", my_username);
         var my_password = "password";

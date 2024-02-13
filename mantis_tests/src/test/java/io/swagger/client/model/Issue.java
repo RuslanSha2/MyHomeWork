@@ -32,7 +32,7 @@ import java.util.List;
 /**
  * Issue
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-02-12T19:20:51.226+03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2024-02-13T11:59:43.900+03:00")
 public class Issue {
   @SerializedName("id")
   private Long id = null;
