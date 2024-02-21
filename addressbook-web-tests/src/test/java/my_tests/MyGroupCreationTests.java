@@ -2,6 +2,7 @@ package my_tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Allure;
 import my_model.GroupData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -41,6 +42,9 @@ public class MyGroupCreationTests extends TestBase {
         var myExpectedList = new ArrayList<>(myOldGroups);
         myExpectedList.add(my_group.withId(myMaxId));
         myExpectedList.sort(compareById);
-        Assertions.assertEquals(myNewGroups, myExpectedList);
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(myNewGroups, myExpectedList);
+        });
     }
 }

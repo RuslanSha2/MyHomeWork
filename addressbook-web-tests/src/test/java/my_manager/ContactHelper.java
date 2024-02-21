@@ -1,5 +1,6 @@
 package my_manager;
 
+import io.qameta.allure.Step;
 import my_model.ContactData;
 import my_model.GroupData;
 import org.openqa.selenium.By;
@@ -17,6 +18,7 @@ public class ContactHelper extends HelperBase {
         super(my_manager);
     }
 
+    @Step
     public void createMyContact(ContactData my_contact) {
         openMyContactsPage();
         initMyContactCreation();
@@ -25,6 +27,7 @@ public class ContactHelper extends HelperBase {
         returnToMyContactsPage();
     }
 
+    @Step
     public void createMyContact(ContactData my_contact, GroupData my_group) {
         openMyContactsPage();
         initMyContactCreation();
@@ -34,6 +37,7 @@ public class ContactHelper extends HelperBase {
         returnToMyContactsPage();
     }
 
+    @Step
     public void removeMyContact(ContactData my_contact) {
         openMyContactsPage();
         selectMyContact(my_contact);
@@ -46,6 +50,7 @@ public class ContactHelper extends HelperBase {
         returnToMyHomePage();
     }
 
+    @Step
     public void modifyMyContact(ContactData my_contact, ContactData my_modifiedContact) {
         openMyContactsPage();
         selectMyContact(my_contact);
@@ -55,6 +60,7 @@ public class ContactHelper extends HelperBase {
         returnToMyHomePage();
     }
 
+    @Step
     public void modifyMyContact(ContactData my_contact, GroupData my_group) {
         openMyContactsPage();
         selectMyContact(my_contact);
@@ -63,6 +69,7 @@ public class ContactHelper extends HelperBase {
         returnToMyHomePage();
     }
 
+    @Step
     public void removeGroupFromMyContact(ContactData my_contact, GroupData my_group) {
         openMyContactsPage();
         selectMyContactByGroup(my_group);
@@ -76,6 +83,7 @@ public class ContactHelper extends HelperBase {
         return my_manager.my_driver.findElements(By.name("selected[]")).size();
     }
 
+    @Step
     public List<ContactData> getMyContactList() {
         openMyContactsPage();
         var my_contacts = new ArrayList<ContactData>();
@@ -100,6 +108,7 @@ public class ContactHelper extends HelperBase {
         click(By.linkText("home"));
     }
 
+    @Step
     public Map<String, String> getMyPhones() {
         var my_result = new HashMap<String, String>();
         List<WebElement> rows = my_manager.my_driver.findElements(By.name("entry"));
@@ -111,6 +120,7 @@ public class ContactHelper extends HelperBase {
         return my_result;
     }
 
+    @Step
     public Map<String, String> getMyEmailes() {
         var my_result = new HashMap<String, String>();
         List<WebElement> rows = my_manager.my_driver.findElements(By.name("entry"));
@@ -122,6 +132,7 @@ public class ContactHelper extends HelperBase {
         return my_result;
     }
 
+    @Step
     public Map<String, String> getMyAddress() {
         var my_result = new HashMap<String, String>();
         List<WebElement> rows = my_manager.my_driver.findElements(By.name("entry"));

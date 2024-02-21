@@ -1,5 +1,6 @@
 package my_tests;
 
+import io.qameta.allure.Allure;
 import my_common.MyCommonFunctions;
 import my_model.ContactData;
 import my_model.GroupData;
@@ -7,17 +8,19 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
-import java.util.Random;
 import java.util.Comparator;
+import java.util.Random;
 
 public class MyContactModificationTests extends TestBase {
-
     @Test
     void canModifyMyContact() {
-        if (my_app.my_hbm().getMyContactsCount() == 0) {
-            my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
-                    my_app.my_properties().getProperty("file.photoDir")));
-        }
+        Allure.step("Checking precondition", step -> {
+            if (my_app.my_hbm().getMyContactsCount() == 0) {
+                my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
+                        my_app.my_properties().getProperty("file.photoDir")));
+            }
+        });
+
         var myOldContacts = my_app.my_hbm().getMyContactList();
         var my_rnd = new Random();
         var my_index = my_rnd.nextInt(myOldContacts.size());
@@ -52,47 +55,64 @@ public class MyContactModificationTests extends TestBase {
         };
         myNewContacts.sort(compareById);
         myExpectedList.sort(compareById);
-        Assertions.assertEquals(myNewContacts, myExpectedList);
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(myNewContacts, myExpectedList);
+        });
     }
 
     @Test
     void canModifyMyContactInMyGroup() {
-        if (my_app.my_hbm().getMyContactsCount() == 0) {
-            my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
-                    my_app.my_properties().getProperty("file.photoDir")));
-        }
-        if (my_app.my_hbm().getMyGroupsCount() == 0) {
-            my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
-        }
+        Allure.step("Checking precondition #1", step -> {
+            if (my_app.my_hbm().getMyContactsCount() == 0) {
+                my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
+                        my_app.my_properties().getProperty("file.photoDir")));
+            }
+            if (my_app.my_hbm().getMyGroupsCount() == 0) {
+                my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
+            }
+        });
         var my_contact = my_app.my_hbm().getMyContactList().get(0);
         var my_group = my_app.my_hbm().getMyGroupList().get(0);
-        if (my_app.my_hbm().getMyContactsInGroup(my_group).contains(my_contact)) {
-            my_app.my_hbm().removeGroupFromMyContact(my_contact, my_group);
-        }
+
+        Allure.step("Checking precondition #2", step -> {
+            if (my_app.my_hbm().getMyContactsInGroup(my_group).contains(my_contact)) {
+                my_app.my_hbm().removeGroupFromMyContact(my_contact, my_group);
+            }
+        });
+
         var oldRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
         my_app.my_contacts().modifyMyContact(my_contact, my_group);
         var newRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
-        Assertions.assertEquals(oldRelated.size() + 1, newRelated.size());
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(oldRelated.size() + 1, newRelated.size());
+        });
     }
 
     @Test
     void canModifyMyContactOutMyGroup() {
-        if (my_app.my_hbm().getMyContactsCount() == 0) {
-            my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
-                    my_app.my_properties().getProperty("file.photoDir")));
-        }
-        if (my_app.my_hbm().getMyGroupsCount() == 0) {
-            my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
-        }
-        if (my_app.my_hbm().getMyGroupsInContactCount() == 0) {
-            my_app.my_hbm().addGroupToMyContact(my_app.my_hbm().getMyContactList().get(0),
-                    my_app.my_hbm().getMyGroupList().get(0));
-        }
+        Allure.step("Checking precondition", step -> {
+            if (my_app.my_hbm().getMyContactsCount() == 0) {
+                my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
+                        my_app.my_properties().getProperty("file.photoDir")));
+            }
+            if (my_app.my_hbm().getMyGroupsCount() == 0) {
+                my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
+            }
+            if (my_app.my_hbm().getMyGroupsInContactCount() == 0) {
+                my_app.my_hbm().addGroupToMyContact(my_app.my_hbm().getMyContactList().get(0),
+                        my_app.my_hbm().getMyGroupList().get(0));
+            }
+        });
+
         var my_group = my_app.my_hbm().getMyGroupsInContact().get(0);
         var oldRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
         var my_contact = oldRelated.get(0);
         my_app.my_contacts().removeGroupFromMyContact(my_contact, my_group);
         var newRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
-        Assertions.assertEquals(oldRelated.size() - 1, newRelated.size());
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(oldRelated.size() - 1, newRelated.size());
+        });
     }
 }

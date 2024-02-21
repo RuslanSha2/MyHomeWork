@@ -1,5 +1,6 @@
 package my_manager;
 
+import io.qameta.allure.Step;
 import my_model.GroupData;
 import org.openqa.selenium.By;
 
@@ -11,6 +12,7 @@ public class GroupHelper extends HelperBase {
         super(my_manager);
     }
 
+    @Step
     public void createMyGroup(GroupData my_group) {
         openMyGroupsPage();
         initMyGroupCreation();
@@ -19,6 +21,7 @@ public class GroupHelper extends HelperBase {
         returnToMyGroupsPage();
     }
 
+    @Step
     public void removeMyGroup(GroupData my_group) {
         openMyGroupsPage();
         selectMyGroup(my_group);
@@ -26,6 +29,7 @@ public class GroupHelper extends HelperBase {
         returnToMyGroupsPage();
     }
 
+    @Step
     public void modifyMyGroup(GroupData my_group, GroupData my_modifiedGroup) {
         openMyGroupsPage();
         selectMyGroup(my_group);

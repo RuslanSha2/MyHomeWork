@@ -1,5 +1,6 @@
 package my_tests;
 
+import io.qameta.allure.Allure;
 import my_model.ContactData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
@@ -11,10 +12,13 @@ public class MyContactRemovalTests extends TestBase {
 
     @Test
     public void canRemoveMyContact() {
-        if (my_app.my_hbm().getMyContactsCount() == 0) {
-            my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
-                    my_app.my_properties().getProperty("file.photoDir")));
-        }
+        Allure.step("Checking precondition", step -> {
+            if (my_app.my_hbm().getMyContactsCount() == 0) {
+                my_app.my_hbm().createMyContact(new ContactData().withRandomData(2,
+                        my_app.my_properties().getProperty("file.photoDir")));
+            }
+        });
+
         var myOldContacts = my_app.my_hbm().getMyContactList();
         var my_rnd = new Random();
         var my_index = my_rnd.nextInt(myOldContacts.size());
@@ -22,6 +26,9 @@ public class MyContactRemovalTests extends TestBase {
         var myNewContacts = my_app.my_hbm().getMyContactList();
         var myExpectedList = new ArrayList<>(myOldContacts);
         myExpectedList.remove(my_index);
-        Assertions.assertEquals(myNewContacts, myExpectedList);
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(myNewContacts, myExpectedList);
+        });
     }
 }

@@ -2,6 +2,7 @@ package my_tests;
 
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import io.qameta.allure.Allure;
 import my_model.ContactData;
 import my_model.GroupData;
 import org.junit.jupiter.api.Assertions;
@@ -45,20 +46,28 @@ public class MyContactCreationTests extends TestBase {
         myExpectedList.add(my_contact.withId(myLastId).withPhoto(myLastPhoto));
 
         myExpectedList.sort(compareById);
-        Assertions.assertEquals(myExpectedList, myNewContacts);
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(myExpectedList, myNewContacts);
+        });
     }
 
     @Test
     void canCreateMyContactInMyGroup() {
         var my_contact = new ContactData().withRandomData(2,
                 my_app.my_properties().getProperty("file.photoDir"));
-        if (my_app.my_hbm().getMyGroupsCount() == 0) {
-            my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
-        }
+        Allure.step("Checking precondition", step -> {
+            if (my_app.my_hbm().getMyGroupsCount() == 0) {
+                my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
+            }
+        });
+
         var my_group = my_app.my_hbm().getMyGroupList().get(0);
         var oldRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
         my_app.my_contacts().createMyContact(my_contact, my_group);
         var newRelated = my_app.my_hbm().getMyContactsInGroup(my_group);
-        Assertions.assertEquals(oldRelated.size() + 1, newRelated.size());
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(oldRelated.size() + 1, newRelated.size());
+        });
     }
 }

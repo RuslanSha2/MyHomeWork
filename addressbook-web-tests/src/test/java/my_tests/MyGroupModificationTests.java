@@ -1,5 +1,6 @@
 package my_tests;
 
+import io.qameta.allure.Allure;
 import my_common.MyCommonFunctions;
 import my_model.GroupData;
 import org.junit.jupiter.api.Assertions;
@@ -13,9 +14,12 @@ public class MyGroupModificationTests extends TestBase {
 
     @Test
     void canModifyMyGroup() {
-        if (my_app.my_hbm().getMyGroupsCount() == 0) {
-            my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
-        }
+        Allure.step("Checking precondition", step -> {
+            if (my_app.my_hbm().getMyGroupsCount() == 0) {
+                my_app.my_hbm().createMyGroup(new GroupData().withRandomData(2));
+            }
+        });
+
         var myOldGroups = my_app.my_hbm().getMyGroupList();
         var my_rnd = new Random();
         var my_index = my_rnd.nextInt(myOldGroups.size());
@@ -34,6 +38,9 @@ public class MyGroupModificationTests extends TestBase {
         };
         myNewGroups.sort(compareById);
         myExpectedList.sort(compareById);
-        Assertions.assertEquals(myNewGroups, myExpectedList);
+
+        Allure.step("Validating results", step -> {
+            Assertions.assertEquals(myNewGroups, myExpectedList);
+        });
     }
 }
