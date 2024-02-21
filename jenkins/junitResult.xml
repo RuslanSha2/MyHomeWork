@@ -1,0 +1,320 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<result plugin="junit@1259.v65ffcef24a_88">
+  <suites>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.ContactInfoTests.xml</file>
+      <name>my_tests.ContactInfoTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:33:23 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:33:23 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 6611 chars]...
+ersion
+WARN: HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+февр. 21, 2024 1:33:45 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set &apos;hibernate.transaction.jta.platform&apos; to enable JTA platform integration)
+</stderr>
+      <duration>27.018</duration>
+      <startTime>1708511599000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:33:19</timestamp>
+      <time>27.018</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>15.053</duration>
+          <startTime>1708511599000</startTime>
+          <className>my_tests.ContactInfoTests</className>
+          <testName>testAddress()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>5.965</duration>
+          <startTime>1708511614053</startTime>
+          <className>my_tests.ContactInfoTests</className>
+          <testName>testEmails()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>5.992</duration>
+          <startTime>1708511620018</startTime>
+          <className>my_tests.ContactInfoTests</className>
+          <testName>testPhones()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyContactCreationTests.xml</file>
+      <name>my_tests.MyContactCreationTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:33:49 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:33:49 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 3260 chars]...
+able to find CDP implementation matching 104
+февр. 21, 2024 1:34:19 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you&apos;re using and the version number of the artifact is the same as Selenium&apos;s.
+</stderr>
+      <duration>40.769</duration>
+      <startTime>1708511626000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:33:46</timestamp>
+      <time>40.769</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>11.55</duration>
+          <startTime>1708511626000</startTime>
+          <className>my_tests.MyContactCreationTests</className>
+          <testName>canCreateMyContactInMyGroup()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>9.381</duration>
+          <startTime>1708511637550</startTime>
+          <className>my_tests.MyContactCreationTests</className>
+          <testName>[1] ContactData[my_id=, my_firstname=ku, my_middlename=ft, my_lastname=yry, my_nickname=vl, my_title=hs, my_company=nrco, my_address=kmklk, my_mobilephone=63815278385, my_email=hu@fb.info, my_photo=src\test\resources\images\avatar.png, my_workphone=, my_homephone=, my_email2=, my_email3=, my_phone2=]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>9.355</duration>
+          <startTime>1708511646931</startTime>
+          <className>my_tests.MyContactCreationTests</className>
+          <testName>[2] ContactData[my_id=, my_firstname=brrf, my_middlename=lxup, my_lastname=yayedh, my_nickname=fwop, my_title=lqyk, my_company=zfjuwnzw, my_address=uvlipapjkx, my_mobilephone=52102670486, my_email=czqj@isci.info, my_photo=src\test\resources\images\man.png, my_workphone=, my_homephone=, my_email2=, my_email3=, my_phone2=]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>10.3</duration>
+          <startTime>1708511656286</startTime>
+          <className>my_tests.MyContactCreationTests</className>
+          <testName>[3] ContactData[my_id=, my_firstname=svrqsr, my_middlename=bsakbf, my_lastname=jqyllfyzv, my_nickname=whgbje, my_title=negslj, my_company=cjyutsywijjt, my_address=lleepdecqxnvxdn, my_mobilephone=82776134783, my_email=mtzjci@bwclbm.info, my_photo=src\test\resources\images\woman.png, my_workphone=, my_homephone=, my_email2=, my_email3=, my_phone2=]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyContactModificationTests.xml</file>
+      <name>my_tests.MyContactModificationTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:34:29 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:34:29 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 6380 chars]...
+ersion
+WARN: HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+февр. 21, 2024 1:34:48 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set &apos;hibernate.transaction.jta.platform&apos; to enable JTA platform integration)
+</stderr>
+      <duration>24.317</duration>
+      <startTime>1708511667000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:34:27</timestamp>
+      <time>24.317</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>8.223</duration>
+          <startTime>1708511667000</startTime>
+          <className>my_tests.MyContactModificationTests</className>
+          <testName>canModifyMyContactOutMyGroup()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>8.522</duration>
+          <startTime>1708511675223</startTime>
+          <className>my_tests.MyContactModificationTests</className>
+          <testName>canModifyMyContact()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>7.567</duration>
+          <startTime>1708511683745</startTime>
+          <className>my_tests.MyContactModificationTests</className>
+          <testName>canModifyMyContactInMyGroup()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyContactRemovalTests.xml</file>
+      <name>my_tests.MyContactRemovalTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:34:54 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:34:54 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 1460 chars]...
+ersion
+WARN: HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+февр. 21, 2024 1:34:56 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set &apos;hibernate.transaction.jta.platform&apos; to enable JTA platform integration)
+</stderr>
+      <duration>7.13</duration>
+      <startTime>1708511691000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:34:51</timestamp>
+      <time>7.13</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>7.13</duration>
+          <startTime>1708511691000</startTime>
+          <className>my_tests.MyContactRemovalTests</className>
+          <testName>canRemoveMyContact()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyGroupCreationTests.xml</file>
+      <name>my_tests.MyGroupCreationTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:35:01 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:35:01 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 800 chars]...
+able to find CDP implementation matching 104
+февр. 21, 2024 1:35:14 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the chromium-based browser you&apos;re using and the version number of the artifact is the same as Selenium&apos;s.
+</stderr>
+      <duration>20.294</duration>
+      <startTime>1708511699000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:34:59</timestamp>
+      <time>20.294</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>6.75</duration>
+          <startTime>1708511699000</startTime>
+          <className>my_tests.MyGroupCreationTests</className>
+          <testName>[1] GroupData[my_id=, my_name=akq, my_header=hyy, my_footer=gvt]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.822</duration>
+          <startTime>1708511705750</startTime>
+          <className>my_tests.MyGroupCreationTests</className>
+          <testName>[2] GroupData[my_id=, my_name=iptkxp, my_header=qnpeju, my_footer=yktzaj]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+        <case>
+          <duration>6.717</duration>
+          <startTime>1708511712572</startTime>
+          <className>my_tests.MyGroupCreationTests</className>
+          <testName>[3] GroupData[my_id=, my_name=gfjnzmcue, my_header=sxknjfanj, my_footer=dghnzuiqz]</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyGroupModificationTests.xml</file>
+      <name>my_tests.MyGroupModificationTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:35:21 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:35:21 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 1460 chars]...
+ersion
+WARN: HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+февр. 21, 2024 1:35:23 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set &apos;hibernate.transaction.jta.platform&apos; to enable JTA platform integration)
+</stderr>
+      <duration>6.802</duration>
+      <startTime>1708511719000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:35:19</timestamp>
+      <time>6.802</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>6.802</duration>
+          <startTime>1708511719000</startTime>
+          <className>my_tests.MyGroupModificationTests</className>
+          <testName>canModifyMyGroup()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+    <suite>
+      <file>C:\Users\sharipov.rf\apache-jmeter\bin\jenkins\workspace\my_addressbook_tests\addressbook-web-tests\build\test-results\test\TEST-my_tests.MyGroupRemovalTests.xml</file>
+      <name>my_tests.MyGroupRemovalTests</name>
+      <stdout></stdout>
+      <stderr>февр. 21, 2024 1:35:28 PM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+WARNING: Unable to find CDP implementation matching 104
+февр. 21, 2024 1:35:28 PM org.openqa.selenium.chromium.ChromiumDriver lambda$new$5
+WARNING: Unable to find version of CDP to use for 104.0.5112.81. You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.16.1` where the version (&quot;v86&quot;) matches the version of the ch
+...[truncated 1460 chars]...
+ersion
+WARN: HHH000511: The 5.5.0 version for [org.hibernate.dialect.MySQLDialect] is no longer supported, hence certain features may not work properly. The minimum supported version is 5.7.0. Check the community dialects project for available legacy versions.
+февр. 21, 2024 1:35:30 PM org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator initiateService
+INFO: HHH000489: No JTA platform available (set &apos;hibernate.transaction.jta.platform&apos; to enable JTA platform integration)
+</stderr>
+      <duration>6.337</duration>
+      <startTime>1708511726000</startTime>
+      <properties/>
+      <timestamp>2024-02-21T10:35:26</timestamp>
+      <time>6.337</time>
+      <enclosingBlocks/>
+      <enclosingBlockNames/>
+      <cases>
+        <case>
+          <duration>6.337</duration>
+          <startTime>1708511726000</startTime>
+          <className>my_tests.MyGroupRemovalTests</className>
+          <testName>canRemoveMyGroup()</testName>
+          <skipped>false</skipped>
+          <properties/>
+          <failedSince>0</failedSince>
+        </case>
+      </cases>
+    </suite>
+  </suites>
+  <duration>132.667</duration>
+  <skipOldReports>false</skipOldReports>
+  <startTime>1708511599000</startTime>
+  <stdioRetention>NONE</stdioRetention>
+  <keepProperties>false</keepProperties>
+</result>

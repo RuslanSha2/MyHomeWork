@@ -1,0 +1,72 @@
+<?xml version='1.1' encoding='UTF-8'?>
+<project>
+  <description>My home work #20</description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.plugins.git.GitSCM" plugin="git@5.2.1">
+    <configVersion>2</configVersion>
+    <userRemoteConfigs>
+      <hudson.plugins.git.UserRemoteConfig>
+        <url>https://github.com/RuslanSha2/MyHomeWork</url>
+      </hudson.plugins.git.UserRemoteConfig>
+    </userRemoteConfigs>
+    <branches>
+      <hudson.plugins.git.BranchSpec>
+        <name>*/main</name>
+      </hudson.plugins.git.BranchSpec>
+    </branches>
+    <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+    <submoduleCfg class="empty-list"/>
+    <extensions/>
+  </scm>
+  <canRoam>true</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers/>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.plugins.gradle.Gradle plugin="gradle@2.10">
+      <switches></switches>
+      <tasks>clean test</tasks>
+      <rootBuildScriptDir></rootBuildScriptDir>
+      <buildFile>addressbook-web-tests/build.gradle</buildFile>
+      <gradleName>(Default)</gradleName>
+      <useWrapper>true</useWrapper>
+      <makeExecutable>false</makeExecutable>
+      <useWorkspaceAsHome>false</useWorkspaceAsHome>
+      <wrapperLocation></wrapperLocation>
+      <passAllAsSystemProperties>false</passAllAsSystemProperties>
+      <projectProperties></projectProperties>
+      <passAllAsProjectProperties>false</passAllAsProjectProperties>
+    </hudson.plugins.gradle.Gradle>
+  </builders>
+  <publishers>
+    <ru.yandex.qatools.allure.jenkins.AllureReportPublisher plugin="allure-jenkins-plugin@2.31.1">
+      <configPath></configPath>
+      <jdk></jdk>
+      <properties/>
+      <results>
+        <ru.yandex.qatools.allure.jenkins.config.ResultsConfig>
+          <path>addressbook-web-tests/allure-results</path>
+        </ru.yandex.qatools.allure.jenkins.config.ResultsConfig>
+      </results>
+      <reportBuildPolicy>ALWAYS</reportBuildPolicy>
+      <includeProperties>false</includeProperties>
+      <disabled>false</disabled>
+      <report>allure-report</report>
+    </ru.yandex.qatools.allure.jenkins.AllureReportPublisher>
+    <hudson.tasks.junit.JUnitResultArchiver plugin="junit@1259.v65ffcef24a_88">
+      <testResults>**/test-results/**/*.xml</testResults>
+      <stdioRetention>NONE</stdioRetention>
+      <keepProperties>false</keepProperties>
+      <healthScaleFactor>1.0</healthScaleFactor>
+      <allowEmptyResults>false</allowEmptyResults>
+      <skipPublishingChecks>false</skipPublishingChecks>
+      <checksName></checksName>
+      <skipMarkingBuildUnstable>false</skipMarkingBuildUnstable>
+      <skipOldReports>false</skipOldReports>
+    </hudson.tasks.junit.JUnitResultArchiver>
+  </publishers>
+  <buildWrappers/>
+</project>
